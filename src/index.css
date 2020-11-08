@@ -1,3 +1,7 @@
+html {
+  margin:0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +9,263 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+
+.movie-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+}
+
+.movie-card-list a {
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 25%; 
+}
+
+
+.movie-card {
+  flex-direction: column;
+  width: 25%;
+}
+
+.movie-card img{
+  width: 100%;
+  margin: 0;
+}
+
+.overlay-container {
+  position: relative;
+}
+
+.text-overlay { 
+  position: absolute;
+  bottom: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.742);
+  width: 100%;
+  height: 100%;
+  transition: 0.2s ease;
+  opacity: 0;
+}
+
+.text-overlay h1 { 
+  position: absolute;
+  bottom: 50px;
+  margin-left: 20px;
+  font-size: 35px;
+}
+
+.text-overlay p {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  font-size: 17px;
+}
+
+.text-overlay:hover {
+  opacity: 1;
+}
+
+/***MOVIE DETAIL PAGE***/
+
+.details-page {
+  position: relative;
+}
+
+.detail-backdrop {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: left;
+
+}
+
+.movie-detail-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  margin-left:50px;  
+}
+
+
+.movie-poster h1{
+  color: #fff;
+}
+  
+.movie-poster {
+  border: solid white 6px;
+}
+
+.movie-detail-title {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  margin: 0px;
+  color: #ffffff;
+}
+
+.movie-detail-text {
+  color: white;
+  max-width: 400px;
+  font-size: 16px;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 20px;
+  background: rgba(8, 8, 8, 0.565);
+  padding:5px;
+}
+
+.rating  {
+  color: red;
+  font-size: 17px;
+  font-weight: 400;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.overview  {
+  color: #fff;
+  margin: 0px;
+}
+
+.movie-detail-back {
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 60px;
+}
+
+.back-text {
+  opacity:1;
+  color: white;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.back-text:hover, .back-text:focus, .back-text:active {
+  -webkit-transform: translateX(8px);
+  transform: translateX(8px);
+  text-shadow: 1.5px 1px 2px #000;
+}
+
+ a {
+  text-decoration: none;
+  color: white;
+  margin:0px
+}
+
+.movie-detail-text a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+
+
+/** NAV TEST **/
+
+header {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+}
+
+.nav-links {
+  margin: 20px;
+}
+
+.nav-links:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.back-button {
+  padding: 10px;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 40px 10px; 
+  display: flex;
+  align-items: center;
+  transition: ease 0.2s;
+  cursor: pointer;
+}
+
+
+/** Media Queiries **/
+
+
+@media (min-width: 300px) and (max-width: 700px) {
+
+.movie-poster {
+  width: 200px;
+  margin-top: 200px;
+}
+
+.movie-detail-text {
+  margin-left: 5px;
+}
+
+.movie-detail-back button {
+  margin-right: 160px;
+}
+  
+.movie-detail-content {
+  margin-left: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-backdrop {
+  background-position: 50%;
+}
+
+.movie-poster h1 {
+  font-size: 14px;
+}
+  
+.overview{
+  font-size: 14px; 
+}
+
+.rating {
+  display: none;
+}
+
+.link {
+  margin-bottom: 160px;  
+} 
+}
+
+
